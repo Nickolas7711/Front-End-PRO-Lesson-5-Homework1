@@ -16,7 +16,15 @@ for (i = 1; i <= lengthArray; i++) {
 
 document.write(`Введені елементи масиву - ${array.join(', ')}<br>`);
 
-array.sort();
+for (i = 0; i < array.length - 1; i++) {
+    for (j = i + 1; j < array.length; j++) {
+        if (array[i] > array[j]) {
+            sortArray = array[i];
+            array[i] = array[j];
+            array[j] = sortArray;
+        }
+    }
+}
 document.write(`Сортування елементів масиву - ${array.join(', ')}<br>`);
 
 array.splice(1, 3);
